@@ -18,6 +18,7 @@
   --content__header-color: #353430;
   --nav-text-color: #353430;
   --nav-focus-color: rgba(50, 49, 45, 0.4);
+  --main-bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
 }
 
@@ -36,6 +37,7 @@
     --content__header-color: #353430;
     --nav-text-color: #353430;
     --nav-focus-color: rgba(50, 49, 45, 0.4);
+    --main-bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
   }
 

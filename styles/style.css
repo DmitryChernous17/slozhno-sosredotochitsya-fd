@@ -2,13 +2,14 @@
 
 .page {
   padding: 0 10px;
+  background-color: var(--main-bg-color);
   color: var(--main-text-color);
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-
+  margin: 0 auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -168,13 +169,13 @@
 
 .content__text-block {
   display: grid;
-  gap: 53px;
-  margin-block-end: 54px;
+  gap: 51px;
+  margin-block-end: 50px;
 }
 
 .content__text-block_columns {
   display: grid;
-  gap: 20px;
+  gap: 21px;
 }
 
 .content__text-block_rows {
