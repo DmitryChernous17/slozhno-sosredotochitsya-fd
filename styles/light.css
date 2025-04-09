@@ -40,13 +40,4 @@
     --main-bg-color: #fff1f7;
     --bg-image: url(../images/cover-image-light.png);
   }
-
-  .theme-auto .page .header__decoration {
-    /* Вам также нужно будет написать ряд подобных селекторов */
-    display: none;
-  }
-
-  .header__theme-menu-button_active:hover {
-    border: 1px solid var(--nav-focus-color);
-  }
 }

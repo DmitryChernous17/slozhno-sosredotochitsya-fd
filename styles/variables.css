@@ -10,7 +10,7 @@
   --decoration-color: #ff0070;
   --content__header-color: #ff0070;
   --nav-text-color: #ff0070;
-  --nav-focus-color:rgba(255, 0, 112, 0.4);
+  --nav-focus-color: rgba(255, 0, 112, 0.4);
   --main-bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
 }
