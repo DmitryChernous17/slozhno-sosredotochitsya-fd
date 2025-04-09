@@ -2,19 +2,17 @@
 
 .page {
   padding: 0 10px;
-  background-color: var(--main-bg-color);
   color: var(--main-text-color);
+  background-color: var(--main-bg-color);
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0 auto;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
 .headings {
-  margin-block-end: 55px;
   color: var(--main-header-color);
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -27,9 +25,13 @@
   background-color: var(--accent-color);
 }
 
+.title-weight {
+  font-weight: 400;
+}
+
 .text-link {
   text-decoration: none;
-  text-shadow: 4px 2px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .text-link:hover {
@@ -47,14 +49,15 @@
 .header,
 .footer {
   padding: 10px 0;
-  min-block-size: 668px;
   block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .header {
   position: relative;
   display: grid;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
   margin-block-end: 40px;
 }
 
@@ -82,6 +85,7 @@
 
 .header__decoration {
   position: absolute;
+  color: var(--accent-color);
   font-size: 18px;
   line-height: 139%;
   inset-inline-end: 9px;
@@ -105,11 +109,6 @@
   block-size: 9px;
 }
 
-.header__theme-menu {
-  margin-block-end: 65px;
-  padding-block-start: 65px;
-}
-
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
@@ -128,38 +127,30 @@
   cursor: pointer;
 }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--nav-text-color);
-  cursor: default;
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--nav-focus-color);
 }
 
-.header__theme-menu-button_active:hover {
-  border: 1px solid var(--nav-focus-color);
+.header__theme-menu-button_active {
+  outline: 1px solid var(--nav-text-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-button:focus-visible::after {
-  content: "";
-  position: absolute;
-  background-color: var(--nav-text-color);
-  inline-size: 100%;
-  block-size: 1px;
-  inset-block-end: -2px;
-  inset-inline-start: 0;
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--nav-text-color);
 }
 
 .header__heading {
   text-shadow: 4px 4px 0 var(--accent-color);
-  inline-size: min-content;
 }
 
 .header__description {
-  margin-block-end: 55px;
   font-weight: 700;
-  max-inline-size: 364px;
+  inline-size: 100%;
   white-space: pre-line;
 }
 
@@ -173,14 +164,14 @@
   margin-block-end: 50px;
 }
 
-.content__text-block_columns {
+.content__text-block_intro,
+.content__text-block_advices {
   display: grid;
   gap: 21px;
 }
 
-.content__text-block_rows {
+.content__text-block_main {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -189,20 +180,21 @@
 }
 
 .content__subtitle {
-  margin-block-end: 20px;
+  margin-block-end: 22px;
 }
 
 .card__title {
   margin-block-end: 10px;
 }
 
-.content__gallery {
+.content__gallery-layout {
   display: grid;
   gap: 10px;
 }
 
 .content__picture {
   object-fit: cover;
+  object-position: center;
   inline-size: 100%;
   block-size: 100%;
 }
@@ -215,7 +207,6 @@
 }
 
 .footer__heading {
-  padding: 275px 0;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -227,8 +218,6 @@
   .header,
   .footer {
     padding: 20px 0;
-    block-size: 100vh;
-    min-block-size: 1024px;
   }
 
   .header {
@@ -247,20 +236,13 @@
     inset-block-start: 20px;
   }
 
-  .header__theme-menu {
-    margin-block-end: 173px;
-    padding-block-start: 172px;
-  }
-
   .header__heading {
     margin-left: -20px;
-    margin-block-end: 162px;
-    inline-size: initial;
   }
 
   .header__description {
     justify-self: flex-end;
-    margin-block-end: 163px;
+    inline-size: 50%;
   }
 
   .content {
@@ -268,31 +250,33 @@
   }
 
   .content__text-block {
-    gap: 80px;
+    gap: 81px;
     margin-block-end: 82px;
   }
 
-  .content__text-block_columns {
+  .content__text-block_intro,
+  .content__text-block_advices {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
 
-  .content__text-block_columns .card {
+  .content__text-block_main .content__title {
+    inline-size: min-content;
+  }
+
+  .content__text-block_intro .card,
+  .content__text-block_advices .card {
     grid-column: 2/3;
   }
 
-  .content__text-block_rows>.content__title {
-    max-inline-size: 236px;
+  .content__gallery > .card__title {
+    margin-block-end: 20px;
   }
 
-  .content__gallery {
+  .content__gallery-layout {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-
-  .content__text-block+.card__title {
-    margin-block-end: 20px;
   }
 
   .content__picture:nth-child(1) {
@@ -317,19 +301,9 @@
   .footer {
     padding: 20px 0;
   }
-
-  .footer__heading {
-    padding: 443px 0;
-  }
 }
 
 @media (width >=1024px) {
-
-  .header,
-  .footer {
-    min-block-size: 768px;
-  }
-
   .headings {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
@@ -337,33 +311,35 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-block-end: 273px;
-    padding-block-start: 0;
-  }
-
-  .header__heading {
-    margin-block-end: 114px;
-  }
-
-  .header__description {
-    margin-block-end: 114px;
-    max-inline-size: 491px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
+  .content__text-block_intro,
+  .content__text-block_advices {
+    grid-template-columns: 1fr 66%;
+  }
 
-  .content__text-block_rows {
+  .content__text-block_main {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .content__text-block_rows>.content__title {
-    grid-column: 1 / span 3;
-    max-inline-size: 315px;
+  .content__text-block_main .content__title {
+    inline-size: 33%;
   }
 
-  .footer__heading {
-    padding: 300px 0;
+  .content__text-block_main > .content__title {
+    grid-column: 1 / span 3;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .header__decoration {
+    display: none;
+  }
+
+  .theme-dark .header__decoration {
+    display: inline-block;
   }
 }
