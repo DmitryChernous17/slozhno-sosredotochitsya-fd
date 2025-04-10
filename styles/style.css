@@ -151,7 +151,6 @@
 .header__description {
   font-weight: 700;
   inline-size: 100%;
-  white-space: pre-line;
 }
 
 .content {
@@ -160,14 +159,14 @@
 
 .content__text-block {
   display: grid;
-  gap: 51px;
+  gap: 50px;
   margin-block-end: 50px;
 }
 
 .content__text-block_intro,
 .content__text-block_advices {
   display: grid;
-  gap: 21px;
+  gap: 20px;
 }
 
 .content__text-block_main {
@@ -180,11 +179,15 @@
 }
 
 .content__subtitle {
-  margin-block-end: 22px;
+  margin-block-end: 20px;
 }
 
 .card__title {
   margin-block-end: 10px;
+}
+
+.card__text {
+  line-height: 130%;
 }
 
 .content__gallery-layout {
@@ -243,7 +246,6 @@
   .header__description {
     justify-self: flex-end;
     inline-size: 50%;
-    
   }
 
   .content {
@@ -251,8 +253,8 @@
   }
 
   .content__text-block {
-    gap: 81px;
-    margin-block-end: 82px;
+    gap: 80px;
+    margin-block-end: 80px;
   }
 
   .content__text-block_intro,

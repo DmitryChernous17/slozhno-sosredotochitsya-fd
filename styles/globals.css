@@ -11,6 +11,7 @@ body {
   max-inline-size: 1440px;
   margin: 0 auto;
   font-family: "IBM Plex mono", monospace;
+  
 }
 
 h1,
@@ -22,6 +23,7 @@ h6,
 p {
   margin: 0;
   font-size: 18px;
+  line-height: 130%;
 }
 
 ul {
