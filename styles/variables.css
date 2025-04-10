@@ -3,6 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
+  --header-decoration-display: inline-block;
   --main-header-color: #db00ff;
   --subheader-color: #000028;
   --main-text-color: #f1b2ce;

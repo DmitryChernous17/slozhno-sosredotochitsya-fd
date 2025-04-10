@@ -31,7 +31,7 @@
 
 .text-link {
   text-decoration: none;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .text-link:hover {
@@ -94,13 +94,13 @@
 
 .header__decoration::before {
   content: "REC";
-  display: inline-block;
+  display: var(--header-decoration-display);
   margin-inline-end: 10px;
 }
 
 .header__decoration::after {
   content: "";
-  display: inline-block;
+  display: var(--header-decoration-display);
   border-radius: 50%;
   vertical-align: middle;
   box-shadow: 0 0 4px 2px var(--accent-color);
@@ -243,6 +243,7 @@
   .header__description {
     justify-self: flex-end;
     inline-size: 50%;
+    
   }
 
   .content {
@@ -308,6 +309,10 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .header__description {
+    white-space: initial;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -331,15 +336,5 @@
 
   .content__text-block_main > .content__title {
     grid-column: 1 / span 3;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .header__decoration {
-    display: none;
-  }
-
-  .theme-dark .header__decoration {
-    display: inline-block;
   }
 }
